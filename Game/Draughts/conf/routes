@@ -1,0 +1,16 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET		/								controllers.GameController.index()
+GET		/game/addPlayer/name=:name		controllers.GameController.addPlayer(name : String)
+GET		/game/getBoard/id=:id			controllers.GameController.getBoard(id : Integer)
+
+GET		/game/move/gameId=:gameId&name=:name&fromX=:fromX&fromY=:fromY&toX=:toX&toY=:toY  controllers.GameController.move(gameId : Integer , name: String , fromX:Integer , fromY : Integer , toX :Integer , toY :Integer)
+
+
+#(int gameId, String name, int fromX, int fromY, int toX, int toY)
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)
